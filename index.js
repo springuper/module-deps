@@ -367,7 +367,7 @@ Deps.prototype.walk = function (id, parent, cb) {
         if (deps.length === 0) done();
         
         function done () {
-            if (!rec.id) rec.id = file;
+            if (!rec.id || rec.entry) rec.id = file;
             if (!rec.source) rec.source = src;
             if (!rec.deps) rec.deps = resolved;
             if (!rec.file) rec.file = file;
